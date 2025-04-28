@@ -24,7 +24,7 @@ jobs:
             -e MOBSF_API_KEY=disabled \
             opensecurity/mobile-security-framework-mobsf
           sleep 30  # Wait for MobSF to fully initialize
- - name: Upload APK to MobSF
+      - name: Upload APK to MobSF
         run: |
           echo "Uploading APK..."
           response=$(curl -s -X POST "http://localhost:8000/api/v1/upload" \
@@ -46,7 +46,7 @@ jobs:
           echo "Report saved to mobsf_report.json"
 
     #   - name: Upload MobSF Report as Artifact
-      #     uses: actions/upload-artifact@v4
+    #     uses: actions/upload-artifact@v4
     #     with:
     #       name: mobsf-static-analysis-report
     #       path: mobsf_report.json
